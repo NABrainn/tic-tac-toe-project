@@ -59,37 +59,33 @@ function Game() {
     const checkWinner = () => {
         const isTrue = (element) => element === game.nextToken();
         //check rows
-        // let row = 0;
-        // for(let i=0; i<3; i++){
-        //     if(board.getBoard()[row].every(isTrue)){
-        //         console.log('win');
-        //     }
-        //     row++;
-        // }   
+        let row = 0;
+        for(let i=0; i<3; i++){
+            if(board.getBoard()[row].every(isTrue)){
+                console.log('win');
+            }
+            row++;
+        }
+
         // //check cols
-        // let col = 0;
-        // for(let i=0; i<3; i++) {
-        //     const column = board.getBoard().map(element => element[col]);
-        //     if(column.every(isTrue)) {
-        //         console.log('win');
-        //     }
-        //     col++;
-        // }
+        let col = 0;
+        for(let i=0; i<3; i++) {
+            const column = board.getBoard().map(element => element[col]);
+            if(column.every(isTrue)) {
+                console.log('win');
+            }
+            col++;
+        }
         
         // //check diag back
-        let diag = 0;
-        const diagBack = board.getBoard().map((element) => {
-            element[diag];
-            diag++;
-        });
-        // diag++;
-        console.log(diagBack)
+        let diagIncrement = 0;
+        const diagBack = board.getBoard().map((element) => element[diagIncrement++]);
+        if(diagBack.every(isTrue)) console.log('win');
         
-        // diag = 2;
-        // board.getBoard().map(element => {
-        //     console.log(element[diag]);
-        //     diag--;
-        // })
+        //check diag forward
+        let diagDecrement = 2;
+        const diagForward = board.getBoard().map((element) => element[diagDecrement--]);
+        if(diagForward.every(isTrue)) console.log('win');
     }
     const announceWinner = () => {
         //
