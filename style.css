@@ -45,7 +45,7 @@ body {
     margin-left: -2px;
 }
 
-#start {
+#play, #play-again {
     display: block;
     outline: none;
     cursor: pointer;
@@ -61,10 +61,19 @@ body {
     margin-top: 20px;
     margin-left: auto;
     margin-right: auto;
-    width: 100px;
+    width: 150px;
     height: 40px;
 }
+
+#play-again {
+    display: none;
+}
+
 button:hover {
     border-color: #000000;
     background: #f7f7f7;
+}
+
+#footer {
+    display: none;
 }
