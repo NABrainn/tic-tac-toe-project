@@ -77,7 +77,12 @@ function Gameboard() {
             eventControl.removeTokenListener();
         }
     }
-    return { getBoard, setBoard, dropToken, checkWinner }
+    return { 
+        getBoard, 
+        setBoard, 
+        dropToken, 
+        checkWinner 
+    }
 }
 
 function Player(name, token, nextTurn) { 
@@ -131,7 +136,16 @@ function Game() {
         displayControl.result();
     }
     
-    return { startup, getPlayers, getPlayerOne, getPlayerTwo, switchTurn, nextToken, playTurn, cleanup }
+    return { 
+        startup, 
+        getPlayers, 
+        getPlayerOne, 
+        getPlayerTwo, 
+        switchTurn, 
+        nextToken, 
+        playTurn, 
+        cleanup 
+    }
 }
 
 function displayController() {
@@ -173,7 +187,16 @@ function displayController() {
         selectPlayAgainBtn.style.display = 'block';
     }
 
-    return { nextToken, setCells, result, announceWinner, announceDraw, selectToken, selectFooter, selectPlayAgainBtn }
+    return { 
+        nextToken, 
+        setCells, 
+        result, 
+        announceWinner, 
+        announceDraw, 
+        selectToken, 
+        selectFooter, 
+        selectPlayAgainBtn
+    }
 }
 
 function eventController() {
@@ -215,7 +238,12 @@ function eventController() {
             displayControl.selectPlayAgainBtn.style.display = 'none';
         })
     } 
-    return { addTokenToDisplay, removeTokenListener, addPlayBtnListener, addPlayAgainBtnListener }
+    return { 
+        addTokenToDisplay, 
+        removeTokenListener, 
+        addPlayBtnListener, 
+        addPlayAgainBtnListener 
+    }
 }
 
 const board = Gameboard();
@@ -224,8 +252,7 @@ board.setBoard();
 const eventControl = eventController();
 const displayControl = displayController();
 displayControl.nextToken();
-displayControl.result()
-
+displayControl.result();
 eventControl.addPlayBtnListener();
 
 
